@@ -1,5 +1,7 @@
 data = []
 
+ #Partition function
+    
 def partition(array, start, end):
 
     pivot = array[end]
@@ -14,7 +16,8 @@ def partition(array, start, end):
 
     return i + 1
  
- 
+# quicksort function 
+
 def quickSort(array, start, end):
     if start < end:
         pivot = partition(array, start, end)
@@ -22,14 +25,16 @@ def quickSort(array, start, end):
         quickSort(array, start, pivot - 1)
 
         quickSort(array, pivot + 1, end)
+        
+        #input function
 
 def inputArray():
     arrayResult = []
 
-    totalNumbers = int(input('How many numbers? '))
+    totalNumbers = int(input('Total numbers to input. '))
 
     for i in range(totalNumbers):
-        inputNumber = int(input('Enter a number: '))
+        inputNumber = int(input('Enter the number: '))
         arrayResult.append(inputNumber)
 
     return arrayResult
@@ -43,13 +48,20 @@ if(result == 1):
 elif (result == 2):
     for i in range(20, 0, -1):
         data.append(i)
+        
+# to print the unsorted array
 
-print("Unsorted array:")
+print("TheUnsorted array:")
 print(data)
  
+  #length of the given array.
+
 size = len(data)
  
 quickSort(data, 0, size - 1)
- 
+
+# to print the sorted array
+    
+  
 print('Sorted Array:')
 print(data)
